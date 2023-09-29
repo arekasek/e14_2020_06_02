@@ -1,0 +1,8 @@
+Kwerenda 1: CREATE TABLE pokoje ( id INT, nazwa VARCHAR(20), cena FLOAT );
+Kwerenda 2: ALTER TABLE pokoje MODIFY id INT PRIMARY KEY NOT NULL;
+Kwerenda 3: INSERT INTO pokoje VALUES (1,'jednoosobowy',100),(2,'dwuosobowy',170),(3,'trzyosobowy',210);
+Kwerenda 4: ALTER TABLE rezerwacje ADD CONSTRAINT fk_PracownikMiasto FOREIGN KEY (id_pok) REFERENCES pokoje(id);
+Kwerenda 5: SELECT id_pok, SUM(liczba_dn) FROM rezerwacje GROUP BY id_pok;
+Kwerenda 6: SELECT SUM(liczba_dn) as Rezerwacje_latem FROM rezerwacje WHERE rezerwacje.sezon='lato';
+Kwerenda 7: UPDATE pokoje SET cena = (cena+(cena*0.15));
+Kwerenda 8: CREATE USER 'najemca' identified by 'n@JEM1@!';
